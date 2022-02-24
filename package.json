@@ -1,0 +1,21 @@
+{
+  "name": "lu9-node-readme",
+  "version": "1.0.0",
+  "description": "readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "lu9-node-readme"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "LU",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
