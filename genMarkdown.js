@@ -20,34 +20,35 @@ const genMarkdown = (data) => {
 
     return `
 
-    # ${data.title}\n
+   ##  ${data.title}\n`
 
-    ---
+   `
 
     \n## Table of Contents\n
-    *[Description](#description)\n;
-    *[Usage](#usage)\n 
-   * [Installation](#installation)\n
-    *[Tests](#tests)\n
-    *[License](#license)\n
+    * [Description](#description)\n
+    * [Usage](#usage)\n 
+    * [Installation](#installation)\n
+    * [Tests](#tests)\n
+    * [License](#license)\n
     * [Contributors](#contributors)\n
-    * [Questions](#questions)\n
+    * [Questions](#questions)\n`
     
+    `
     
-    ---
 
   ${licenseBadge}\n\n---\n
 
+    ---
     
-  \n## Description\n${data.description}\n
+   \n## Description\n${data.description}\n
 
   ---
 
-  ## Usage\n${data.usage}\n
+  \n ## Usage\n${data.usage}\n
     
   ---
 
-   \n## Installation\n${data.installation}
+   \n## Installation\n${data.installation}\n
     
    ---
 
