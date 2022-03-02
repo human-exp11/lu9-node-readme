@@ -16,57 +16,54 @@ const genMarkdown = (data) => {
         break;
     };   
 
-    `# ${data.title}`
-
-    //Table of Contents
-    let contents = `\n## Table of Contents\n`
-    contents += `* [Description](#description)\n`; 
-    contents += `* [Usage](#usage)\n`; 
-    contents += `* [Installation](#installation)\n`; 
-    contents += `* [Tests](#tests)\n`; 
-    contents += `* [License](#license)\n`;
-    contents += `* [Contributors](#contributors)\n`; 
-    contents += `* [Questions](#questions)\n`;
-
-    //Year for license
     let year = new Date();
 
-    //Title of README
-    let template = `# ${data.title}\n`;
+    return `
 
-    //License badge
-    template += `\n${licenseBadge}\n\n---\n`;
+    # ${data.title}\n
 
-    //Description
-    template += `\n## Description\n${data.description}\n`;
+    ---
 
-    //Table of contents r/t user input
-    template += contents;
-
-    //Usage 
-    template += `\n## Usage\n${data.usage}\n`;
+    \n## Table of Contents\n
+    *[Description](#description)\n;
+    *[Usage](#usage)\n 
+   * [Installation](#installation)\n
+    *[Tests](#tests)\n
+    *[License](#license)\n
+    * [Contributors](#contributors)\n
+    * [Questions](#questions)\n
     
-
-    //Installation 
-    template += `\n## Installation\n
-    ${data.installation}`
     
+    ---
 
-    //Tests 
-    template += `\n## Tests\n${data.tests}\n`;
+  ${licenseBadge}\n\n---\n
+
     
+  \n## Description\n${data.description}\n
 
-    //License
-    template += `\n## License \nLicensed under the ${data.license} License. Copyright \u00A9 ${year.getFullYear()}\n`; 
+  ---
 
-    //Contributors
-    template += `\n## Contributors\n${data.contributors}\n`;
+  ## Usage\n${data.usage}\n
+    
+  ---
 
-    //Contact 
-    template += `\n## Questions\nFor any additional information or questions, please visit- \n\nGitHub Profile: (https://github.com/${data.username})\n\n or send an email: [${data.email}](mailto:${data.email})\n`;
+   \n## Installation\n${data.installation}
+    
+   ---
 
+    \n## Tests\n${data.tests}\n
+ 
+    ---
 
-    return template;
+    \n## License \nLicensed under the ${data.license} License. Copyright \u00A9 ${year.getFullYear()}\n
+
+    ---
+
+    \n## Contributors\n${data.contributors}\n
+
+    ---
+
+    \n## Questions\nFor any additional information or questions, please visit- \n\nGitHub Profile: (https://github.com/${data.username})\n\n or send an email: [${data.email}](mailto:${data.email})\n`
 
 
 };
