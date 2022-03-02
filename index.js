@@ -69,17 +69,17 @@ const promptUser= ()=> {
 };
 
 // Success message once file is created
-const wellDone = chalk.greenBright(`Your README file has been created! It can be found within the "Output" folder.
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// `);
+const wellDone = chalk.greenBright(`Your README file has been created! It can be found within the "Output" folder.`);
 
-// Function to create README.md file
-const writeToFile = (fileName, data) => {
-    fs.writeFile(fileName, data, (err) =>
-        err ? console.error(err) : console.log(wellDone)
-    );
-} 
 
-//Function to initialize 
+fs.writeFile('README.md', inquirer.prompt, function (err) { 
+    if (err)
+console.log(err);
+    else
+console.log(wellDone);
+});
+
+
 const init = async () => {
     try {
        const main =  await inquirer.prompt(welcome);
@@ -88,6 +88,7 @@ const init = async () => {
     } catch (err) {
         console.log(err);
     }
-}
+};
+
 
 init();
