@@ -1,5 +1,16 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+const inquirer = require("inquirer");
+const chalk = require("chalk");
+const fs = require("fs");
+const genMarkdown = require("./genMarkdown"); 
+
+// A welcome message for the user
+const welcome = [
+    {
+        type: "confirm",
+        name: "welcome",
+        message: chalk.cyanBright(`Welcome to my README.md generator! A README file will be created once all the following prompts are answered. To begin hit 'y' or enter.`),
+    },
+];
 
 // Questions to prompt the user
 const promptUser= ()=> {
@@ -44,26 +55,39 @@ const promptUser= ()=> {
             name: "license",
             message: "Please choose the appropriate licensure for this project.",
             choices: [
-                "BSD",
-                "GPL",
+                "BSD 2-Clause",
                 "MIT",
+                "Mozilla Public 2.0",
             ]
         },
         {
             type: "input",
-            name: "contributing",
+            name: "contributors",
             message: "Who are the contributors of this projects?"
         },
     ]);
 };
 
-const init = () => {
-    promptUser()
-      //writeFileSync method to use promises instead of a callback function
-      .then((answers) => fs.writeFileSync("README.md", generateREADME(answers)))
-      .then(() => console.log("README.md file successfully created."))
-      .catch((err) => console.error(err));
-};    
+// Success message once file is created
+const wellDone = chalk.greenBright(`Your README file has been created! It can be found within the "Output" folder.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// `);
 
+// Function to create README.md file
+const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log(wellDone)
+    );
+} 
+
+//Function to initialize 
+const init = async () => {
+    try {
+       const main =  await inquirer.prompt(welcome);
+        const data = await promptUser ();
+        writeToFile("output/readme.md", genMarkdown(data));    
+    } catch (err) {
+        console.log(err);
+    }
+}
 
 init();
