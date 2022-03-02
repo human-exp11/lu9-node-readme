@@ -14,7 +14,7 @@
 * [Tests](#tests)
 * [License](#license)
 * [Contributors](#contributors)
-* [Questions](#email)
+* [Questions](#questions)
 
 ## Usage
 
@@ -31,9 +31,9 @@ Licensed under the BSD 2-Clause License. Copyright © 2022
 ## Contributors
 
 
-## Contact Me
+## Questions
 For any additional information or questions, please visit- 
 
-GitHub: [@undefined](https://github.com/undefined/)
+GitHub Profile: (https://github.com/human-exp11)
 
- or send an email: [](mailto:)
+ or send an email: [human.exp11@gmail.com](mailto:human.exp11@gmail.com)

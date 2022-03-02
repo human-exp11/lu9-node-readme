@@ -4,7 +4,7 @@ Homework #09 - Node.JS: Professional README Generator
 ## Table of Contents
  * [User Story](#user-story)
  * [Acceptance Criteria](#acceptance-criteria)
- * [Application Video](#app-video)
+ * [Application Video](#application-video)
  * [Credits](#credits)
  * [Contact](#contact)
 
@@ -19,7 +19,7 @@ SO THAT I can quickly create a professional README for a new project
 ```
 ---
 
-## Acceptence Criteria
+## Acceptance Criteria
 
 ```md
 GIVEN a command-line application that accepts user input-

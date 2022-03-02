@@ -24,7 +24,7 @@ const genMarkdown = (data) => {
     contents += `* [Tests](#tests)\n`; 
     contents += `* [License](#license)\n`;
     contents += `* [Contributors](#contributors)\n`; 
-    contents += `* [Questions](#email)\n`;
+    contents += `* [Questions](#questions)\n`;
 
     //Year for license
     let year = new Date();
@@ -54,13 +54,13 @@ const genMarkdown = (data) => {
     
 
     //License
-    template += `\n## License \nLicensed under the ${data.license} License. Copyright \u00A9 ${year.getFullYear()}\n`;
+    template += `\n## License \nLicensed under the ${data.license} License. Copyright \u00A9 ${year.getFullYear()}\n`; 
 
     //Contributors
     template += `\n## Contributors\n${data.contributors}\n`;
 
     //Contact 
-    template += `\n## Contact Me\nFor any additional information or questions, please visit- \n\nGitHub: [@${data.github}](https://github.com/${data.github}/)\n\n or send an email: [${data.email}](mailto:${data.email})\n`;
+    template += `\n## Questions\nFor any additional information or questions, please visit- \n\nGitHub Profile: (https://github.com/${data.username})\n\n or send an email: [${data.email}](mailto:${data.email})\n`;
 
 
     return template;
