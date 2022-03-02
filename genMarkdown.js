@@ -14,7 +14,9 @@ const genMarkdown = (data) => {
         break;
         default:
         break;
-    }   
+    };   
+
+    `# ${data.title}`
 
     //Table of Contents
     let contents = `\n## Table of Contents\n`
@@ -46,7 +48,8 @@ const genMarkdown = (data) => {
     
 
     //Installation 
-    template += `\n## Installation\n${data.installation}\n`;
+    template += `\n## Installation\n
+    ${data.installation}`
     
 
     //Tests 
@@ -64,6 +67,7 @@ const genMarkdown = (data) => {
 
 
     return template;
+
 
 };
 
