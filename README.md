@@ -48,6 +48,7 @@ THEN I am taken to the corresponding section of the README √
 ---
 
 ## Application Video
+*[Video Link](https://drive.google.com/file/d/12rUfH05v4u1UPlWX08dcCzTwotPvgXvj/view)
 
 ---
 

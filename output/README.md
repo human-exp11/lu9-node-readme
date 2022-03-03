@@ -1,4 +1,4 @@
-##  sdf
+##  README Generator
 
  
 
@@ -21,7 +21,7 @@
 
     
 
-  [![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
@@ -30,42 +30,42 @@
     
  
 ## Description
-sdf
+The README Generator utilizes inquirer to prompt the user questions that are important for all readme files to include. Once all the questions are answered, a README.md file will be created.
 
 
   ---
 
   
  ## Usage
-sdf
+Be sure to install the Inquirer NPM and utilize node to initiate the prompts.
 
     
  ---
 
  
 ## Installation
-sdf
+npm i
 
     
  ---
 
  
 ## Tests
-sdf
+npm run test
 
  
   ---
 
   
 ## License 
-Licensed under the BSD 2-Clause License. Copyright © 2022
+Licensed under the MIT License. Copyright © 2022
 
 
   ---
 
   
 ## Contributors
-sdf
+John, Sally, & Dot
 
 
   ---
@@ -74,6 +74,6 @@ sdf
 ## Questions
 For any additional information or questions, please visit- 
 
-GitHub Profile: (https://github.com/sdf)
+GitHub Profile: (https://github.com/human-exp11)
 
- or send an email: [sdf](mailto:sdf)
+ or send an email: [human.exp11@gmail.com](mailto:human.exp11@gmail.com)
