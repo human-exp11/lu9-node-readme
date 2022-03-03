@@ -15,10 +15,9 @@ function genMarkdown(data) {
     break;
     default:
     break;
-  }
+}
+  return `##  ${data.title}\n
  
-
- `##  ${data.title}\n
 
   \n## Table of Contents\n
   * [Description](#description)\n
@@ -61,6 +60,7 @@ function genMarkdown(data) {
  \n## Questions\nFor any additional information or questions, please visit- \n\nGitHub Profile: (https://github.com/${data.username})\n\n or send an email: [${data.email}](mailto:${data.email})\n`
 
 };
+
 
 module.exports = genMarkdown;
 

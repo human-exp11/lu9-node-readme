@@ -1,20 +1,28 @@
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const fs = require("fs");
-const genMarkdown = require("./genMarkdown"); 
+var genMarkdown = require("./genMarkdown"); 
+const path = require("path");
 
-// A welcome message for the user
-const welcome = [
-    {
-        type: "confirm",
-        name: "welcome",
-        message: chalk.cyanBright(`Welcome to my README.md generator! A README file will be created once all the following prompts are answered. To begin hit 'y' or enter.`),
-    },
-];
+
+// Success message once file is created
+const wellDone = chalk.greenBright(`Your README file has been created! It can be found within the "Output" folder.`);
+
+function writeToFile(fileName, data) {
+    // writing file and syncing it using path to join the current working directory using the fileName and user data.
+    console.log(data)
+    fs.writeFileSync(path.join(process.cwd(), fileName), data);
+
+}
 
 // Questions to prompt the user
-const promptUser= ()=> {
-    return inquirer.prompt([
+function init() {
+    inquirer.prompt([
+        {
+            type: "confirm",
+            name: "welcome",
+            message: chalk.cyanBright(`Welcome to my README.md generator! A README file will be created once all the following prompts are answered. To begin hit 'y' or enter.`),
+        },
         {
             type: "input",
             name: "username",
@@ -64,31 +72,17 @@ const promptUser= ()=> {
             type: "input",
             name: "contributors",
             message: "Who are the contributors of this projects?"
-        },
-    ]);
-};
+         }
+    
+    ])
+    .then(function(data) {
+    // message for the user
+ 
+     console.log(wellDone);
+    // calling function writeToFile(fileName, data) using "README.md" and genMarkdown(data) parameters & uses a spread opperater to spread data. 
+     writeToFile("./output/README.md", genMarkdown({...data})); 
 
-// Success message once file is created
-const wellDone = chalk.greenBright(`Your README file has been created! It can be found within the "Output" folder.`);
-
-
-fs.writeFile('README.md', inquirer.prompt, function (err) { 
-    if (err)
-console.log(err);
-    else
-console.log(wellDone);
 });
 
-
-const init = async () => {
-    try {
-       const main =  await inquirer.prompt(welcome);
-        const data = await promptUser ();
-        writeToFile("output/readme.md", genMarkdown(data));    
-    } catch (err) {
-        console.log(err);
-    }
-};
-
-
-init();
+}
+init()
